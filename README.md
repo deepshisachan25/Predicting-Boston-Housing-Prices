@@ -1,8 +1,7 @@
 # Predicting-Boston-Housing-Prices
 The dataset mlba::BostonHousing contains information collected by the U.S. Bureau of the Census concerning housing in the area of Boston, Massachusetts. The dataset includes information on 506 census housing tracts in the Boston area. The dataset contains 12 predictors. The last column (CAT.MEDV) was derived from median house value (MEDV) such that it obtains the value 1 if MEDV > 30 and 0 otherwise. 
-The data dictionary describing each variable is at the end of this assignment file.
+The data dictionary describing each variable is -
 
-Variable	Description
 - CRIM	Per capita crime rate by town
 - ZN	Percentage of residential land zoned for lots over 25,000 ft2
 - INDUS	Percentage of land occupied by nonretail business
