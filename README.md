@@ -32,3 +32,39 @@ High concentration of nitric oxide is mainly caused by high vehicular traffic wh
 
 NOX & INDUS: They have a positive correlation between NOX and INDUS variables which means they are directly correlated. The percentage of land occupied by non-retail business is correlated with Nitric oxide concentration as there would be more offices and traffic in industrial area so chances of nitric oxide and pollution will be higher in that location.
 
+The first six rows of boston housing data is shown below-
+
+![image](https://github.com/user-attachments/assets/cddb773c-a687-4ec2-a726-15acb3e824c5)
+
+![image](https://github.com/user-attachments/assets/b1c24945-a834-4b68-a68b-771e3aa65b81)
+
+![image](https://github.com/user-attachments/assets/20cbfaff-64e4-4cdc-91ec-0fe99b9f6334)
+
+
+## Build a k‐NN classification model 
+![image](https://github.com/user-attachments/assets/4cddc9af-4c75-4c4e-b7f9-3d16f3b78f1c)
+
+Using the classification KNN model, 
+### what is the median value category (above $30000 or not) for a tract in the Boston area that does not bound the Charles River, has a crime rate of 0.1, Full-value property tax rate is 250 and where the average number of rooms per house is 6?
+
+To predict new values, we use following R code:
+![image](https://github.com/user-attachments/assets/159b1d2a-b072-44fd-bc9d-ebe57e44def2)
+
+We get predicted value as “0” which means the median value is not above $30,000 because Class “0” represents median value below or equal to $30,000.
+
+#### To find the accuracy of KNN model, we do prediction on holdout data.
+
+![image](https://github.com/user-attachments/assets/a0107839-80e8-4893-a474-803287fb586a)
+
+Accuracy = 0.9154 ~ 91.54% which means this model can give 91.54% accurate value for new data.
+
+## Confusion matrix on train data
+![image](https://github.com/user-attachments/assets/d499db79-e3ee-4269-a555-b96c493026c7)
+
+  From the above confusion matrix, we can see that the accuracy is different for holdout and training set. Accuracy for training set is higher than accuracy for holdout set. 
+Some of the reasons, why accuracy is different for both the set is: 
+•	One reason can be because of the outliers: The presence of outliers in the holdout set, which did not exist in the training set on which the model was trained, due to this it might have an impact on the model's predictions and accuracy varies. 
+•	A class (say 0) may be predicted less precisely by the model if there are fewer occurrences of that class in the holdout set. So, because of this reason accuracy for holdout set can be different from training set. 
+•	Because of the random partitioning, the distributions of the training and holdout sets may differ. It is possible that the model will not work effectively on the holdout set if the sample size of the holdout set differs from that of the training set dat.
+•	A model that performs perfectly well on the training set but is unable to generalize new data (the holdout set) may be because of overfitting, which means the model fits very well on the training data due to which accuracy of training set and holdout set is very different. Our main purpose of building a model is that it should predict new data instead of overfitting on which it was trained then in that case it will not give accurate result.
+Holdout is unknown data which will give value for future data.
